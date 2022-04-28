@@ -40,6 +40,13 @@ class User extends Authenticatable
     ];
 
     /**
+     * Get the store associated with the user.
+     */
+    public function store()
+    {
+        return $this->hasOne(Store::class);
+    }
+    /**
      * The attributes that should be cast.
      *
      * @var array<string, string>

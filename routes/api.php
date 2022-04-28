@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\StoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +16,12 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::middleware('auth:sanctum')->group(function () {
+
+     // Store  Routes
+     Route::get('/store', [StoreController::class, 'index']);
+     Route::post('/store', [StoreController::class, 'store']);
+     Route::put('/store/{id}', [StoreController::class, 'update']);
+
 
 
     Route::post('logout', [AuthController::class, 'logout']);
