@@ -16,7 +16,7 @@ class CreateStoresTable extends Migration
         Schema::create('stores', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->boolean('is_vat_included')->default(true);
+            $table->boolean('is_vat_included')->nullable()->default(1);
             $table->integer('vat_percentage')->nullable();
             $table->float('shipping_cost')->nullable()->default(0);
             $table->foreignId('user_id');
