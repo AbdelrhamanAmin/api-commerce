@@ -28,9 +28,9 @@ class CreateProductRequest extends FormRequest
         return [
             'name_ar'           => ['string', 'required', 'max:250'],
             'name_en'           => ['string' ,'required', 'max:250'],
-            'description_ar'    => ['string' ,'required', 'max:250'],
-            'description_en'    => ['string' ,'required', 'max:250'],
-            'price'             => ['numeric' ,'required']
+            'description_ar'    => ['string' ,'nullable', 'max:250'],
+            'description_en'    => ['string' ,'nullable', 'max:250'],
+            'price'             => ['numeric' ,'required'],
         ];
     }
 }

@@ -46,6 +46,14 @@ class User extends Authenticatable
     {
         return $this->hasOne(Store::class);
     }
+
+    /**
+     * Get the cart associated with the user.
+    */
+    public function cart()
+    {
+        return $this->hasOne(Cart::class);
+    }
     /**
      * The attributes that should be cast.
      *

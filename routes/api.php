@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\ProductController;
 
@@ -25,6 +26,12 @@ Route::middleware('auth:sanctum')->group(function () {
     // Product  Routes
     Route::get('/product', [ProductController::class, 'index']);
     Route::post('/product', [ProductController::class, 'store']);
+
+    // Cart  Routes
+    Route::get('/cart', [CartController::class, 'index']);
+    Route::post('/cart', [CartController::class, 'store']);
+    Route::post('/add-to-cart', [CartController::class, 'addToCart']);
+
 
     Route::post('logout', [AuthController::class, 'logout']);
 });
