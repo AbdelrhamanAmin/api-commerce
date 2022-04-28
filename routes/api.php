@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StoreController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +17,14 @@ use App\Http\Controllers\StoreController;
 */
 
 Route::middleware('auth:sanctum')->group(function () {
+    // Store  Routes
+    Route::get('/store', [StoreController::class, 'index']);
+    Route::post('/store', [StoreController::class, 'store']);
+    Route::put('/store/{id}', [StoreController::class, 'update']);
 
-     // Store  Routes
-     Route::get('/store', [StoreController::class, 'index']);
-     Route::post('/store', [StoreController::class, 'store']);
-     Route::put('/store/{id}', [StoreController::class, 'update']);
-
-
+    // Product  Routes
+    Route::get('/product', [ProductController::class, 'index']);
+    Route::post('/product', [ProductController::class, 'store']);
 
     Route::post('logout', [AuthController::class, 'logout']);
 });
