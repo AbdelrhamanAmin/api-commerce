@@ -1,6 +1,6 @@
 # API Commerce
 
-You can find Postman Collection blew
+You can find Postman Collection below
 ## Postman collection
 ```https://www.getpostman.com/collections/ac8e970bbc30d3b11d8c```
 
